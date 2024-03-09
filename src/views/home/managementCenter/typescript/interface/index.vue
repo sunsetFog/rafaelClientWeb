@@ -28,6 +28,11 @@ fishList: any[];
 children: React.ReactNode
 
 */
+interface taskType {
+  id?: string;
+  label?: string;
+  value?: string;
+}
 
 interface Book {
     readonly title: string | number // 只读属性，创建的值不能修改    可以字符串或数字类型
@@ -36,6 +41,7 @@ interface Book {
     grass(source: string, subString: string): boolean // 函数类型   返回值是boolean类型
     phoneWay: (option: boolean) => void // 函数类型
     pumpkin?: Function,
+    taskList?: taskType[],// 定义数组
     [random: string]: any // key随机字符串，value是任意类型
 }
 

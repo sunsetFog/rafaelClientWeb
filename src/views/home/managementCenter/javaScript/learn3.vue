@@ -151,6 +151,9 @@ export default {
                 props: { pumpkin },
                 ...residue
             } = obj
+            // 取值并赋值
+            const { banana: melon } = obj;
+            console.log("--吃瓜--", melon);
             console.log('--对象的解构赋值--', cabbage, '---', pumpkin, '-剩余值的对象-', residue)
             const { list: butterfly = [] } = obj
             console.log("--取值、赋值、默认值--", butterfly)
