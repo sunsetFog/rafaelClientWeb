@@ -16,7 +16,7 @@ export default {
         }
     },
     mounted(){
-        this.demo10();
+        this.demo13();
     },
     methods: {
         demo1(){
@@ -206,6 +206,11 @@ export default {
             let flag = true, bean = '土豆';// 定义多个变量
             flag && (bean = '香蕉');
             console.log("&&", bean);
+        },
+        demo13 () {
+            // new Error 函数用于创建一个新的错误对象，通常用于抛出错误或异常
+            let winter = new Error('捕获异常');
+            console.log("--winter--", winter);
         }
     }
 }
