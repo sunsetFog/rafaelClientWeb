@@ -18,6 +18,8 @@
         6.onmouseout: 鼠标离开事件
         7.onmousedown：鼠标按下时触发该事件
         8.onmouseup：鼠标抬起事件
+        onMouseMove 拖动
+        onMouseLeave 离开
         9.onclick：鼠标点击完毕事件
         10.ondblclick：双击事件
 

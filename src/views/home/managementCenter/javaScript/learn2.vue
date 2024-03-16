@@ -32,12 +32,6 @@ export default {
             // let timer = setInterval(fn,1000);
             // clearInterval(timer);//清除间隔性定时器
         },
-        demo3() {
-            // 保留两个小数点
-            let money = 75995094.5789;
-            console.log('保留两个小数点', Number(money.toFixed(2))); // toFixed(num) 指定小数位数（四舍五入，返回的是字符串）
-            console.log('保留两个小数点', parseInt(money * 100) / 100);
-        },
         demo4() {
             //递归: 函数直接或间接调用自己
             // 阶乘

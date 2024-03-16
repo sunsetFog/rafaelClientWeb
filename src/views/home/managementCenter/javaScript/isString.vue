@@ -13,7 +13,7 @@ export default {
         }
     },
     created() {
-        this.demo3();
+        this.demo4();
     },
     methods: {
         demo1() {
@@ -133,6 +133,15 @@ export default {
                 }
             }
             console.log(`模版字符串能解析单双引号  "666''`);
+        },
+        // 取字符串中间内容
+        demo4() {
+            let str01 = '<div><ol><li>111</li><li>222</li></ol></div>';
+            let end01 = '</ol>';
+            const cakes1_1 = str01?.search('<ol>');
+            const cakes1_2 = str01?.search(end01);
+            const cakes1_ok = str01?.slice(cakes1_1, cakes1_2 + end01.length);
+            console.log("--cakes1_ok--", cakes1_ok);
         }
     }
 }
