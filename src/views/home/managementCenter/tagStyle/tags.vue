@@ -191,7 +191,7 @@
             ul属性：
                 type:设置标识的样式，disc(默认)，circle，square    样式list-style: none;就失效
          -->
-        <ul type="circle">
+        <ul type="circle" class="pumpkin">
             <li>
                 <img src="@sky/rafaelDesign/static/picture/breezy/icon_tiyu.png" srcset="@sky/rafaelDesign/static/picture/breezy/icon_tiyu@2x.png 2x" alt="">
                 <span>体育</span>
@@ -268,6 +268,20 @@
         <article>
             article标签
         </article>
+        <LineTextLine>details展开标签</LineTextLine>
+        <div class="atmosphere">
+            <details :open="true">
+                <summary>水果列表</summary>
+                <ul>
+                    <li>百事可乐</li>
+                    <li>维他奶</li>
+                    <li>矿泉水</li>
+                    <li>苏打水</li>
+                    <li>冰红茶</li>
+                    <div style="clear: both;"></div>
+                </ul>
+            </details>
+        </div>
     </section>
 </template>
 
@@ -293,7 +307,7 @@ export default {
     color: black;
     background: #fff;
 
-    ul {
+    .pumpkin {
         width: 9rem;
         height: 3rem;
 
@@ -412,5 +426,17 @@ export default {
         line-height: 120px;
         background: #d3dce6;
     }
-
+    .atmosphere {
+        details {
+            text-align: left;
+            ul {
+                width: 100%;
+                li {
+                    width: 100%;
+                    height: 35px;
+                    float: left;
+                }
+            }
+        }
+    }
 }</style>

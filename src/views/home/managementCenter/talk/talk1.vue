@@ -23,7 +23,7 @@ export default {
             性格开朗随和，有上进心，希望日后积累更好，介绍完毕，谢谢！ */
         },
         demo2(){
-            /* 
+            /*
             讲讲经验问题:
                 一. 刷新vuex数据丢失问题，解决: 1.用浏览器缓存,在main.js的刷新判断用缓存 2.刷新判断再次调用http请求，重新存vuex数据
                 二. 用浏览器缓存时: 参数2要是数组或对象，请转化成字符串,用时再字符串再转回数组或对象   看src\pages\managementCenter\knowledge\cache.vue
@@ -35,7 +35,7 @@ export default {
                 六.vue的拦截: 路由拦截(看src\main.js)，请求拦截(看src\api\http.js)
                 七.router配置: 看src\router\index.js
                 八.加载完页面后，多个button高亮---向后台保存要高亮的下标，那数据时，用该下标高亮
-            
+
             为啥离职？
                 面试时沟通的工作内容和实际情况完全不一样
                 公司不发工资
@@ -73,7 +73,7 @@ export default {
              */
         },
         demo3(){
-            /* 
+            /*
             页面的传参方式:
                 一.兄弟vue传参方式
                     1.vuex
@@ -105,7 +105,7 @@ export default {
             看src\vuex */
         },
         demo6(){
-            /* computed与watch的区别:  
+            /* computed与watch的区别:
             看pages\managementCenter\knowledge\computed.vue
             看pages\managementCenter\knowledge\watch.vue */
         },
@@ -199,7 +199,7 @@ export default {
              */
         },
         demo19(){
-            /* 
+            /*
                 HTML语义化的理解？
                 html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析,便于阅读维护理解;
              */
@@ -213,7 +213,7 @@ export default {
             if(!apple && !star){
                 console.log('两者都是false,if时用！非')
             }
-            /* 
+            /*
             null与undefined区别
             很相似，无的意思。
             null表示"不应该有值"
@@ -221,14 +221,14 @@ export default {
              */
         },
         demo21(){
-            /* 
+            /*
                 apply()与call()的区别？
                 方法如何改变this指向？
                 看pages\managementCenter\javaScript\learn2.vue
             */
         },
         demo22(){
-            /* 
+            /*
                 HTTP状态码
                 100 Continue 继续，表示确认，请传具体参数
                 200 OK 正常返回信息
@@ -247,7 +247,7 @@ export default {
             */
         },
         demo23(){
-            /* 
+            /*
             有哪些性能优化方法
                 1.减少http请求次数
                 2.减少DOM操作
@@ -260,7 +260,7 @@ export default {
             */
         },
         demo24(){
-            /* 
+            /*
             哪些常见操作会造成内存泄漏？
             内存泄漏指不再需要的变量仍然存在
             闭包、控制台日志、循环
@@ -269,23 +269,23 @@ export default {
             */
         },
         demo25(){
-            /* 
+            /*
             css盒子垂直居中
             看pages\managementCenter\tagStyle\flex.vue
              */
         },
         demo26(){
-            /* 
+            /*
             http 和 https 有何区别？如何灵活使用？
             https比http安全性高
 http是HTTP协议运行在TCP之上。所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。
 https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的内容都经过加密，加密采用对称加密，
 但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，
-如果配置了客户端验证，服务器方也可以验证客户端的身份         
+如果配置了客户端验证，服务器方也可以验证客户端的身份
              */
         },
         demo27(){
-            /* 
+            /*
             浏览器缓存有哪些
             一.http缓存
             二.websql缓存，
@@ -297,32 +297,32 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
              */
         },
         demo28(){
-            /* 
+            /*
             安全性上的同源策略：两个域要同协议, 同端口，同host域名，其中有一个不同，就产生跨域问题
              */
         },
         demo29(){
-            /* 
+            /*
             浏览器缓存cookie,localStorage,sessionStorage的区别
             看pages\managementCenter\knowledge\cache.vue
              */
         },
         demo30(){
-            /* 
+            /*
             v-if和v-show的区别
             即是display none;和visibility hidden区别
             看pages\managementCenter\knowledge\v_tag.vue
              */
         },
         demo31(){
-           /* 
+           /*
            说说vue的生命周期
            created先执行，再mounted，区别：created是创建数据不能Dom操作，mounted用于Dom操作
            看pages\managementCenter\knowledge\lifeCycle.vue
-            */ 
+            */
         },
         demo32(){
-            /* 
+            /*
             xml和json的区别
             JSON相对于XML来讲，数据的体积小，传递的速度更快些
             JSON与JavaScript的交互更加方便，更容易解析处理，更好的数据交互
@@ -330,7 +330,7 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
              */
         },
         demo33(){
-            /* 
+            /*
             浏览器内核的理解
             主要分成两部分：渲染引擎和JS引擎
             渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式
@@ -338,7 +338,7 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
              */
         },
         demo34(){
-            /* 
+            /*
             html5有哪些新特性？
             (1)绘画 canvas;
             (2)用于媒介回放的 video 和 audio 元素;
@@ -353,13 +353,13 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
              */
         },
         demo35(){
-            /* 
+            /*
                 赋值，浅拷贝和深拷贝的区别
                 看src\pages\managementCenter\javaScript\research.vue
              */
         },
         demo36(){
-            /* 
+            /*
             网站重构的理解
             重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。
             a. 使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效的)
@@ -369,7 +369,7 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
             */
         },
         demo37(){
-            /* 
+            /*
             一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。
             a. 图片懒加载，滚动到相应位置才加载图片。
             b. 图片预加载，如果为幻灯片、相册等，将当前展示图片的前一张和后一张优先下载。
@@ -378,20 +378,20 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
              */
         },
         demo38(){
-            /* 
+            /*
             属性src与href的区别？
             src指向外部资源的位置
             href指向网络资源所在位置
              */
         },
         demo39(){
-            /* 
+            /*
             同步和异步编程
             看pages\managementCenter\javaScript\learn3.vue
              */
         },
         demo40(){
-            /* 
+            /*
             Javascript的垃圾回收机制
                 由于字符串，数组，对象动态分配内存，需要释放再次利用，不然造成系统崩溃
                 减少全局变量的使用
@@ -406,7 +406,7 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
              */
         },
         demo41(){
-            /* 
+            /*
             vue服务器端渲染 (SSR)
             构建客户端应用程序
             优点：
@@ -416,13 +416,6 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
 
 
             网站seo优化平台（按效果月结付费）：网址及搜索引擎的关键字优化，提高网站访问量和排名（客户至少提供10关键词和网址，提交给搜索引擎服务器）
-
-            js 函数的防抖(debounce)与节流(throttle)
-            短时间内频繁触发事件时用
-            函数防抖: 只执行最后一次
-                function debounce(){}   注意函数名
-            函数节流：只执行一次
-                function throttle(){}   注意函数名
              */
         },
         demo42() {
