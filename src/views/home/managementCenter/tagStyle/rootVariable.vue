@@ -1,7 +1,12 @@
 <template>
     <section id="rootVariable">
-        --rootVariable--
-
+        <LineTextLine>css变量</LineTextLine>
+        <div class="papaya">香蕉</div>
+        <!--
+            虽然dom能修改样式，但是多处使用的话，css变量就是好的选择
+         -->
+        <LineTextLine>js变量转css变量</LineTextLine>
+        <div class="cauliflower" id="rapeseed"></div>
     </section>
 </template>
 <!--
@@ -13,26 +18,47 @@
     作用域: :root是html标签内能访问css变量
  -->
 <script>
-// 设置变量
-document.body.style.setProperty('--boxHeight1', '250px');
-document.body.style.setProperty('--boxHeight2', '250');
+export default {
+    name: "rootVariable",
+    data() {
+        return {
+            data_height: '180px',
+            data_lineHeight: '250'
+        }
+    },
+    mounted() {
+        // 设置变量
+        let rapeseed = document.getElementById('rapeseed');
+        console.log("--rapeseed--", rapeseed);
+        rapeseed.style.setProperty('--data_height', this.data_height);
+        rapeseed.style.setProperty('--data_lineHeight', this.data_lineHeight);
 
-// 读取变量
-// document.body.style.getPropertyValue('--boxHeight').trim();
+        // 读取变量
+        // rapeseed.style.getPropertyValue('--data_height').trim();
 
-// 删除变量
-// document.body.style.removeProperty('--boxHeight');
+        // 删除变量
+        // rapeseed.style.removeProperty('--data_height');
+    }
+}
+
 </script>
 
 <style scoped>
 #rootVariable {
     width: 100%;
-    height: var(--boxHeight1, '200px');
-    line-height: calc(var(--boxHeight2) * 1px);
-    color: var(--color-success);
-    background: #F0F3F5;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    /* @mixin fontBold; */
-    /* @apply --fontCommon; */
+    .papaya {
+        width: 100%;
+        color: var(--color-success);
+        background: #F0F3F5;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        /* @mixin fontBold; */
+        /* @apply --fontCommon; */
+    }
+    .cauliflower {
+        width: 100%;
+        height: var(--data_height, '200px');
+        line-height: calc(var(--data_lineHeight) * 1px);
+        background: #faad14;
+    }
 }
 </style>

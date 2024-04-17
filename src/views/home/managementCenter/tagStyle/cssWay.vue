@@ -6,8 +6,13 @@
             <p></p>
         </div>
         <!--
-            css函数
-            hsla(0,0%,0%,0.*);
+            var(参数1, 参数2)
+            参数1为定义，就选参数2
+         -->
+        <LineTextLine>var()函数，插入自定义属性的值</LineTextLine>
+        <div class="grass">666</div>
+        <!--
+            hsla();
             参数1：色调  取值为：0 - 360
                 0(或360)表示红色，120表示绿色，240表示蓝色
             参数2：饱和度  取值为：0.0% - 100.0%
@@ -23,9 +28,14 @@
             css颜色
             https://www.runoob.com/cssref/css-colors.html
          -->
-        <LineTextLine>rgba()函数，颜色和透明度</LineTextLine>
+        <LineTextLine>rgb()函数、rgba()函数、hsl()函数、hsla()函数</LineTextLine>
         <LineTextLine>fadeout()降低颜色透明度</LineTextLine>
         <div class="cakes"></div>
+        <!--
+            目前仅支持伪类的content属性
+         -->
+        <LineTextLine>attr()函数，获取属性值</LineTextLine>
+        <div class="cabbage" data-height="80px" data-custom-color="red"></div>
     </section>
 </template>
 
@@ -52,10 +62,24 @@
             margin-right: -20px;// padding和margin的配合，不会挤下来的
         }
     }
+    .grass {
+        color: var(--text-color, yellow);
+    }
     .cakes {
         width: 100%;
         height: 80px;
         background: fadeout(#004590, 50%);
+    }
+    .cabbage {
+        width: 100%;
+        height: attr(data-height);
+        content: attr(data-height);
+        // background-color: attr(data-custom-color);
+        &::after{
+            height: attr(data-height);
+            content: attr(data-height);
+            background-color: attr(data-custom-color);
+        }
     }
 }
 

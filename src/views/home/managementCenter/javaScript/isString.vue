@@ -142,6 +142,22 @@ export default {
             const cakes1_2 = str01?.search(end01);
             const cakes1_ok = str01?.slice(cakes1_1, cakes1_2 + end01.length);
             console.log("--cakes1_ok--", cakes1_ok);
+        },
+        // 截取<li>至</li>的数组
+        demo5(content) {
+            if (typeof content !== 'string' || !content) {
+            return [];
+            }
+            return content.match(/<li[^><]*?>.*?<\/li>/g);
+            // 截取两个标签
+            // return content.match(/<p[^><]*?>.*?<\/p>|<details[^><]*?>[\s\S]*?<\/details>/g);
+        },
+        // 分割的数组
+        demo6(content) {
+            if (typeof content !== 'string' || !content) {
+                return [];
+            }
+            return content.split('<p>这是分割线</p>');
         }
     }
 }
