@@ -13,7 +13,7 @@ export default {
         }
     },
     created() {
-        this.demo6();
+        this.demo10();
     },
     methods: {
         // 兼容处理
@@ -233,58 +233,21 @@ export default {
             });
             console.log('findIndex=', is_index);
         },
+        // reduce
         demo10() {
-            const PLATFORM_MAP = {
-                bd: {
-                    dev: {
-
-                    },
-                    // 预发环境
-                    release: {
-                    },
-                    // 生产环境
-                    prod: {
-
-                    },
-                },
-                // 天博
-                tb: {
-                    // 各个环境公用的变量
-                    common: {
-
-                    },
-                    // 测试环境
-                    dev: {
-
-                    },
-                    // 预发环境
-                    release: {
-
-                    },
-                    // 生产环境
-                    prod: {
-
-                    },
-                },
-                nth: {
-
-                },
-                ky: {
-
-                }
-            };
-            let arrList = Object.keys(PLATFORM_MAP);
-            console.log("--arrList--", arrList);// ['bd', 'tb', 'nth', 'ky']
             /*
-                reduce第二个参数就是prev初始值，默认为数组的第一个元素
-                最终返回一个单一的值
+                0是prev初始值
+                prev是上一个return值
+                curr是数组的每一项
             */
-            let water = arrList.reduce((prev, curr) => {
-                console.log("row", prev, curr);// {} bd、{} tb、{} nth、{} ky
-                prev[`server:dev:${curr}`] = curr
-                return prev;
-            }, {});
-            console.log("--water--", water);// {}
+            // 累加
+            // const initTabList = [1, 2, 3, 4, 5];
+            const initTabList = ['bd', 'tb', 'nth', 'ky'];
+            const sum = initTabList.reduce((prev, curr)=>{
+                console.log("--demo11--", prev, curr);
+                return prev + curr
+            }, 0);
+            console.log("--累加--", sum);
         }
     }
 }

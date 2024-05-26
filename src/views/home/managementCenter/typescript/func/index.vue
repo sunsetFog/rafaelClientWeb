@@ -1,7 +1,6 @@
 <template>
     <section>
         <button @click="handleSubmit">提交调用接口</button>
-
     </section>
 </template>
 
@@ -15,39 +14,35 @@ import {
 import { saveOrUpdateDemo } from "./services"
 
 import { useRoute } from 'vue-router';
+import { Book, params } from '../interface';
 
+// basketRef1?.current?.value时，value属性未知？？所以需要ref<HTMLInputElement>指定标签
 const basketRef1 = ref<HTMLInputElement>(null);
 const basketRef2 = ref('basket') as any;
-/*
-
-basketRef1.current.value时，value属性未知？？所以需要ref<HTMLInputElement>指定标签
-
-list: Array<any>;
-fishList: any[];
-
-children: React.ReactNode
-
-*/
-interface taskType {
-  id?: string;
-  label?: string;
-  value?: string;
+// 使用接口定义方法类型
+interface Bread {
+  (x: number, y: number): number;
 }
 
-interface Book {
-    readonly title: string | number // 只读属性，创建的值不能修改    可以字符串或数字类型
-    year?: number // 问号表示可选的属性, 既是可以缺少这个属性
-    list: number[] // 表示由此类型元素组成的一个数组    方式二：数组泛型 Array<number>
-    grass(source: string, subString: string): boolean // 函数类型   返回值是boolean类型
-    phoneWay: (option: boolean) => void // 函数类型
-    pumpkin?: Function,
-    taskList?: taskType[],// 定义数组
-    [random: string]: any // key随机字符串，value是任意类型
-}
+let multiply: Bread = function(x, y) {
+  return x * y;
+};
+// 使用类型别名定义方法类型
+type Pineapple = (x: number, y: number) => number;
+
+let add1: Pineapple = function(x, y) {
+  return x + y;
+};
+// 直接冒号
+let add2: (x: number, y: number) => number = function(x, y) {
+  return x + y;
+};
+
+
 
 
 export default defineComponent({
-    name: "interface-demo",
+    name: "funcUnit",
     setup() {
         const use_route = useRoute();
         console.log("--路由参数--", use_route.params, "---", use_route.query);
@@ -56,23 +51,6 @@ export default defineComponent({
         }
     },
     created() {
-        // 要传入的对象
-        let params = {
-            title: 'Vue 3 Guide',
-            year: 2022,
-            list: [6],
-            grass: function (source: string, subString: string) {
-                return true
-            },
-            phoneWay: function (option: boolean) {
-                return
-            },
-            other: '别的呢'
-        }
-
-        const book = reactive<Book>(params);
-        console.log("---reactive使用接口---", book);
-
         this.beanWay(params);
 
         this.dragonfly({ tile: '看看' });
@@ -82,7 +60,6 @@ export default defineComponent({
         let water: Function = () => {
 
         }
-
     },
     methods: {
         beanWay(value: Book) {// 指定形参对象类型

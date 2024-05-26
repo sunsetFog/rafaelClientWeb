@@ -42,6 +42,36 @@
             width: 45px !important;                 9999最大
             7.作用域
             嵌套时，外层是能找到的，用了外层才能用内层
+
+            #ivory经验问题
+            :global{}改不了body子节点样式？
+            原因：样式的继承
+            解决
+            :global{}要放置该弹窗样式里
+
+            清空::before内容
+            &::before {
+                content: none !important;
+            }
+
+            float使用
+            1.父盒子高度确定
+            2.父盒子高度不确定，要清楚浮动
+
+            父盒子高度确定，子盒子min-height: 100%;对的
+            父盒子仅min-height，子盒子min-height: 100%;错的
+            用flex: 1;
+            或
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+
+
+
+
         -->
 
         <LineTextLine>样式命名规范</LineTextLine>
