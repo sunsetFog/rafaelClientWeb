@@ -16,6 +16,11 @@ export default {
                 sex: "女",
                 hobby: " 唱 歌 ",
                 vegetable: { tomato: "西红柿" },
+                grape: undefined,
+                // grape: null,
+                // grape: '',
+                // grape: false,
+                // grape: 0,
                 drink: function () {
                     console.log("今晚的酒真好喝");
                 }
@@ -23,7 +28,7 @@ export default {
         }
     },
     created() {
-        this.demo1();
+        this.demo4();
     },
     methods: {
         demo1() {
@@ -71,10 +76,12 @@ export default {
         },
         // 解构赋值
         demo4() {
-            const { name, vegetable: { tomato }, hobby: potato } = this.person;
+            const { name, vegetable: { tomato }, hobby: potato, grape = '葡萄', ...residue } = this.person;
             console.log("--解构赋值--", name);
             console.log("--多级解构赋值，冒号对象--", tomato);
             console.log("--解构赋值时的别名，冒号名字--", potato);
+            console.log("--仅undefined的默认值--", grape);
+            console.log("--剩余值的对象--", residue);
         },
         // 对象转二维数组
         demo5() {

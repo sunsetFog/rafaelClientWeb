@@ -6,7 +6,7 @@
     </section>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'learn3',
     data(){
@@ -133,34 +133,6 @@ export default {
             */
             console.log('--if简写--', bean)
 
-
-            let obj = {
-                state: {
-                    cabbage: '白菜',
-                },
-                props: {
-                    pumpkin: '南瓜',
-                },
-                peach: '桃子',
-                banana: '香蕉',
-                list: [ 6, 6 ]
-            }
-            // 这里不能用as
-            const {
-                state: { cabbage },
-                props: { pumpkin },
-                ...residue
-            } = obj
-            // 取值并赋值
-            const { banana: melon } = obj;
-            console.log("--吃瓜--", melon);
-            console.log('--对象的解构赋值--', cabbage, '---', pumpkin, '-剩余值的对象-', residue)
-            const { list: butterfly = [] } = obj
-            console.log("--取值、赋值、默认值--", butterfly)
-
-            let listArr = [ 5, 6 ]
-            const [ aaa, bbb, ccc = '噢' ] = listArr
-            console.log("--数组的解构赋值--", aaa, "---", bbb, "---", ccc)
             // 具有初始化/配置功能的函数链
             function name6(params = {}) {
                 console.log("name7", name6.Setup(params));
@@ -179,33 +151,6 @@ export default {
             }catch(err){
                 console.log('在此处理错误',err);
             }
-        },
-        demo12 () {
-            /*
-                ?? 和 ? 是typescript语法
-                ?? 只有null、undefined才取后面值
-                && 只有1、true才取后面值
-                !转布尔值
-                !!转了两次布尔值
-            */
-            let arrBox = [0, false, 1, true, '', null, undefined, [], {}];
-            for (let i = 0; i < arrBox.length; i++) {
-                let item = arrBox[i];
-                let flag = false;
-                if (item) {
-                    flag = true;
-                }
-
-                console.log(`${JSON.stringify(item)}     判断 ${flag}    || ${item || '默认值'}     ?? ${item ?? '默认值'}     && ${item && '默认值'}     ! ${!item}     !! ${!!item}`);
-                console.log("--转数字--", Number(item))
-            }
-
-            let obj1={a:{b:()=>{return 666}}}
-            console.log('?遇到undefined不往下面取值，就不报错了', obj1?.a?.b(), '---', obj1?.at?.b());
-
-            let flag = true, bean = '土豆';// 定义多个变量
-            flag && (bean = '香蕉');
-            console.log("&&", bean);
         },
         demo13 () {
             // new Error 函数用于创建一个新的错误对象，通常用于抛出错误或异常

@@ -13,7 +13,7 @@ export default {
         }
     },
     created() {
-        this.demo10();
+        this.demo11();
     },
     methods: {
         // 兼容处理
@@ -244,10 +244,19 @@ export default {
             // const initTabList = [1, 2, 3, 4, 5];
             const initTabList = ['bd', 'tb', 'nth', 'ky'];
             const sum = initTabList.reduce((prev, curr)=>{
-                console.log("--demo11--", prev, curr);
+                console.log("--demo10--", prev, curr);
                 return prev + curr
             }, 0);
             console.log("--累加--", sum);
+        },
+        // 解构
+        demo11() {
+            let listArr = [ 5, 6, undefined, [7], 8 ];
+            const [ aaa, bbb, grape = '葡萄', [ tomato ], ...residue ] = listArr;
+            console.log("--解构赋值--", aaa, "---", bbb);
+            console.log("--仅undefined的默认值--", grape);
+            console.log("--多级解构赋值--", tomato);
+            console.log("--剩余值的数组--", residue);
         }
     }
 }
