@@ -41,7 +41,7 @@ export default {
             let slogan = '标语'
             console.log('把字符串当变量使用', eval('slogan'))
 
-            let dhhd = {}
+            let dhhd: any = {}
             // json出现转义符，是正常的json格式，不用改
             dhhd.sky = JSON.stringify(jsonObj);
             dhhd.water = jsonObj;
@@ -144,7 +144,7 @@ export default {
             console.log("name6", name6({id: 666}))
         },
         demo11 () {
-            let ly = 867;
+            let ly: any = 867;
             try{
                 ly = ly.split('');// ly不是字符串
                 console.log('在此运行代码');
