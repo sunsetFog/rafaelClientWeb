@@ -36,7 +36,10 @@ let people: Person[] = [
     { name: 'Alice', age: 30 },
     { name: 'Bob', age: 25 },
 ];
-
+// 要求这结构就行
+let garlic: { src; name }[] = [
+    {src: '1', name: '2'}
+]
 
 
 export default defineComponent({
