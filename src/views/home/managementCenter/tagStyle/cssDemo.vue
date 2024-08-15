@@ -61,6 +61,13 @@
                 display: inline-block;底部占据了一点高度
             </span>
         </p>
+        <LineTextLine>浮动</LineTextLine>
+        <div class="zippy">
+            <img src="@sky/rafaelDesign/static/image1/AR.png"/>
+            <p>
+                高级技术文档工程师，12年IT公司工作经验。曾任职于：诺基亚西门子网络有限公司、思科系统上海研发中心、赛门铁克公司等。多次出差美国和印度，带领团队完成视频、网站、文档等翻译工作。
+            </p>
+        </div>
     </section>
 </template>
 
@@ -221,6 +228,22 @@ export default {
             display: inline-block;// 现在问题不出现了？？
             vertical-align: top;// 垂直对齐方式
             background: yellowgreen;
+        }
+    }
+    .zippy {
+        width: 300px;
+        height: 400px;
+        img {
+            width: 120px;
+            height: 120px;
+            float: left;
+            margin: 14px 20px 14px 0;
+        }
+        div {
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(136, 136, 136, 1);
+            line-height: 24px;
         }
     }
 }
