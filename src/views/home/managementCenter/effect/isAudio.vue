@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import toAudio from '@sky/rafaelDesign/static/audio/audio.js';
+import toAudio from '@/@energy/rafaelDesign/static/audio/audio.js';
 export default {
     name: 'isAudio',
     methods: {

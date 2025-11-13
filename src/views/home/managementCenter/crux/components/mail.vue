@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import pagination from '@sky/rafaelDesign/web/components/pagination.vue';
+import pagination from '@/@energy/rafaelDesign/web/components/pagination.vue';
 export default {
     name: 'mail',
     components: { pagination },

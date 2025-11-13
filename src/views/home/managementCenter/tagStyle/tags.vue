@@ -58,7 +58,7 @@
                 target:链接在什么地方加载
             能定位上去，不好用
          -->
-        <img src="@sky/rafaelDesign/static/image1/AR.png" usemap="#Map" style="width: 200px;height: 200px;"/>
+        <img src="@/@energy/rafaelDesign/static/image1/AR.png" usemap="#Map" style="width: 200px;height: 200px;"/>
         <map name="Map">
             <area shape="circle" coords="160,150,50" alt="文字" href="12-eye.html" target="_blank"/>
             <area shape="circle" coords="240,200,50"  alt="文字" href="12-nose.html" target="_blank"/>
@@ -182,7 +182,7 @@
 
         <LineTextLine>button标签</LineTextLine>
         <button class="picture-center-text">
-            <img src="@sky/rafaelDesign/static/picture/breezy/icon_web.png" srcset="@sky/rafaelDesign/static/picture/breezy/icon_web@2x.png 2x" alt="">
+            <img src="@/@energy/rafaelDesign/static/picture/breezy/icon_web.png" srcset="@/@energy/rafaelDesign/static/picture/breezy/icon_web@2x.png 2x" alt="">
             <span>登&nbsp;&nbsp;录</span>
         </button>
 
@@ -193,16 +193,16 @@
          -->
         <ul type="circle" class="pumpkin">
             <li>
-                <img src="@sky/rafaelDesign/static/picture/breezy/icon_tiyu.png" srcset="@sky/rafaelDesign/static/picture/breezy/icon_tiyu@2x.png 2x" alt="">
+                <img src="@/@energy/rafaelDesign/static/picture/breezy/icon_tiyu.png" srcset="@/@energy/rafaelDesign/static/picture/breezy/icon_tiyu@2x.png 2x" alt="">
                 <span>体育</span>
             </li>
             <li>
-                <img src="@sky/rafaelDesign/static/picture/breezy/icon_dianjing.png" srcset="@sky/rafaelDesign/static/picture/breezy/icon_dianjing@2x.png 2x"
+                <img src="@/@energy/rafaelDesign/static/picture/breezy/icon_dianjing.png" srcset="@/@energy/rafaelDesign/static/picture/breezy/icon_dianjing@2x.png 2x"
                     alt="">
                 <span>电竞</span>
             </li>
             <li>
-                <img src="@sky/rafaelDesign/static/picture/breezy/icon_qipai.png" srcset="@sky/rafaelDesign/static/picture/breezy/icon_qipai@2x.png 2x"
+                <img src="@/@energy/rafaelDesign/static/picture/breezy/icon_qipai.png" srcset="@/@energy/rafaelDesign/static/picture/breezy/icon_qipai@2x.png 2x"
                     alt="">
                 <span>棋牌</span>
             </li>
@@ -232,7 +232,7 @@
         <div class="picture-text">
             <dl>
                 <dt>
-                    <img src="@sky/rafaelDesign/static/image1/AR.png" />
+                    <img src="@/@energy/rafaelDesign/static/image1/AR.png" />
                 </dt>
                 <dd>长城旅游</dd>
                 <dd>风景优美</dd>
@@ -295,7 +295,7 @@ export default {
     },
     methods: {
         imgDefault(e) {
-            e.target.src = require('@sky/rafaelDesign/static/image1/AR.png')
+            e.target.src = require('@/@energy/rafaelDesign/static/image1/AR.png')
         }
     }
 }

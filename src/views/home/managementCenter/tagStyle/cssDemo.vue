@@ -63,7 +63,7 @@
         </p>
         <LineTextLine>浮动</LineTextLine>
         <div class="zippy">
-            <img src="@sky/rafaelDesign/static/image1/AR.png"/>
+            <img src="@/@energy/rafaelDesign/static/image1/AR.png"/>
             <p>
                 高级技术文档工程师，12年IT公司工作经验。曾任职于：诺基亚西门子网络有限公司、思科系统上海研发中心、赛门铁克公司等。多次出差美国和印度，带领团队完成视频、网站、文档等翻译工作。
             </p>
