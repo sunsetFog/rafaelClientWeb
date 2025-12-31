@@ -18,9 +18,9 @@ export default {
     methods: {
         demo1(){
             // 函数概念：函数是执行某种特定功能的代码段，一次编写可以重复调用
-            // 定义函数：function 函数名(){代码段}       
-            function fn(value){// value是形参    形参：在函数定义时，传的参数是一个虚拟的变量  
-            
+            // 定义函数：function 函数名(){代码段}
+            function fn(value){// value是形参    形参：在函数定义时，传的参数是一个虚拟的变量
+
             }
             fn(5);//调用函数   5是实参   实参：当函数被调用时,传的参数是一个实际的值
 
@@ -40,7 +40,7 @@ export default {
             }
             fi(1,2);// [1,2]
             fi(1,2,3,4);// [1,2,3,4]
-            
+
             // 函数赋值给一个变量
             var yaya =  function(){
                 return {message: '成功状态'};// return;    函数的返回结果,直接结束该函数
@@ -110,7 +110,7 @@ export default {
             };//构造函数B
 
             A.prototype.speak = function(){
-                
+
             }
             A.prototype.callEat = function(){
                 console.log('构造函数里用this',this.age);//在构造函数中，this指向构造函数new出来的对象
@@ -159,7 +159,10 @@ export default {
                 console.log(x, this);
             }
             aa('在普通函数中，this指向全局对象window，但严格模式use strict的this为undefined');//undefined 此时,this指向window
-            /* 改变this并方法传参 */
+            /*
+                面试必考
+                调用方法改变this指向
+            */
             aa.call(person,'1.call改方法this指向',5);//此时，方法里this指向person
             aa.apply(person, ['2.apply改方法this指向', 5]);//此时，方法里this指向person
             aa.bind(person,'3.bind改方法this指向',5)();//此时，方法里this指向person

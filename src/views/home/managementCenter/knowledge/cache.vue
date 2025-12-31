@@ -1,4 +1,7 @@
 <template>
+    <!--
+    面试必考
+    -->
     <section id="cache">
         <LineTextLine>indexDb缓存(本地数据库)</LineTextLine>
         <el-button link @click="addData">添加数据</el-button>

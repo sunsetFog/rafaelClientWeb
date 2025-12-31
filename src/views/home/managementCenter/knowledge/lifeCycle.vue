@@ -85,10 +85,12 @@ export default {
             cabbage: "大白菜"
         }
     },
-    beforeCreate() {//创建前-用于拦截跳转---少用
+    // 创建前：实例刚被创建，data 和 methods 尚未初始化，无法访问。
+    // 用于拦截跳转
+    beforeCreate() {
 
     },
-    // 创建后-无dom操作,用于创建数据---常用
+    // 创建后：data、methods 已可访问，适合发起异步请求或初始化数据，但 DOM 还未生成，不能DOM操作
     // 注意：加了keep-alive组件缓存缓存后，created不再触发，activated触发
     created() {
         console.log("--created--");
@@ -113,17 +115,32 @@ export default {
             console.log('created-DOM操作', this.$refs.tissue);
         });
     },
-    mounted() {//挂在前-用于dom操作---常用
-        this.$forceUpdate();// 强制重新渲染当前组件
-    },
-    beforeDestroy() {//销毁前-用于该页关闭后执行---用下面一个
+    // 挂载前：模板已编译为虚拟 DOM，但尚未替换真实 DOM。
+    beforeMount() {
 
     },
+    // 挂载后：组件已挂载，$el 可用，是操作 DOM 或启动第三方插件的常用时机
+    mounted() {
+        this.$forceUpdate();// 强制重新渲染当前组件
+    },
+    // 更新前：数据已变，但视图未更新，适合记录更新前的状态。
+    beforeUpdate() {
+
+    },
+    // 更新后：视图已完成更新，可执行依赖新 DOM 的操作，但应避免在此修改状态以防死循环
+    updated() {
+
+    },
+    // 销毁前：实例仍完全可用，推荐在此进行资源释放
+    // vue3改名beforeUnmount了
+    beforeDestroy() {
+
+    },
+    // 销毁后：实例已被销毁，所有绑定解除，仅保留 DOM 节点
+    // this.$route找不到，data数据还有
+    // 用于清除定时器，删事件监听
     destroyed() {
-        /*
-            销毁后-用于该页关闭后执行---常用
-            跳转后执行，this.$route路由参数找不到的，但this指向没变，能拿到data数据
-        */
+
     },
     // study: keep-alive组件缓存
     activated() {//创建  keep-alive组件缓存，请看home.vue

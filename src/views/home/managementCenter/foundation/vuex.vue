@@ -1,6 +1,7 @@
 <template>
 <div>
 	<!--
+                面试必考
 		study: vuex状态管理
 		执行过程：通过dispatch调用action方法，再commit调用mutations方法，
 		从而修改了state数据，getters监听到了state修改，最后computed也监听到state修改，

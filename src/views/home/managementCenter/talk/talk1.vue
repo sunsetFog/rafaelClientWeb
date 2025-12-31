@@ -24,6 +24,7 @@ export default {
         },
         demo2(){
             /*
+            面试必考
             讲讲经验问题:
                 一. 刷新vuex数据丢失问题，解决: 1.用浏览器缓存,在main.js的刷新判断用缓存 2.刷新判断再次调用http请求，重新存vuex数据
                 二. 用浏览器缓存时: 参数2要是数组或对象，请转化成字符串,用时再字符串再转回数组或对象   看src\pages\managementCenter\knowledge\cache.vue
@@ -31,7 +32,6 @@ export default {
                     1. 下载文档：window.open("后台请求url?id="+传参数后台);
                     2. element图片上传: http应该在子组件里
                 四. rem自动转换，转换不了内联样式(style里的样式),需要手动计算转换
-                五.pc端的自适应如何实现    看src\pages\managementCenter\effect\adaption.vue
                 六.vue的拦截: 路由拦截(看src\main.js)，请求拦截(看src\api\http.js)
                 七.router配置: 看src\router\index.js
                 八.加载完页面后，多个button高亮---向后台保存要高亮的下标，那数据时，用该下标高亮
@@ -74,12 +74,13 @@ export default {
         },
         demo3(){
             /*
+            面试必考
             页面的传参方式:
-                一.兄弟vue传参方式
+                一.兄弟vue传参方式，在组件树是同一层级的，无父子关系的组件
                     1.vuex
                     2.浏览器缓存(session,localStorage,cookies)
                     3.路由传参
-                二.子父组件传参    看src\pages\managementCenter\knowledge\parent.vue
+                二.子父组件传参    看src/views/home/managementCenter/knowledge/parent/index.vue
              */
         },
         demo4(){
@@ -90,6 +91,7 @@ export default {
              * 实现: 用下面知识点，监听对象属性变化，
              */
             let obj = { key: '' }
+            // vue2的defineProperty
             Object.defineProperty(obj, 'key', {
                 get() {// get函数
 
@@ -98,20 +100,14 @@ export default {
 
                 }
             })
-        },
-        demo5(){
-           /*  vuex运用:
-            看src\pages\managementCenter\knowledge\vuex.vue
-            看src\vuex */
+            // vue3中 Proxy 响应式机制
         },
         demo6(){
-            /* computed与watch的区别:
-            看pages\managementCenter\knowledge\computed.vue
-            看pages\managementCenter\knowledge\watch.vue */
-        },
-        demo7(){
-            /* 浏览器兼容性:
-            语法错误（js不兼容浏览器） */
+            /*
+                computed与watch的区别:
+                computed是计算属性，随着值的变化重新计算，有缓存作用
+                watch是监听数据变化，可以异步
+            */
         },
         demo8(){
             /* es6: 看pages\managementCenter\javaScript\es6.vue */
@@ -122,20 +118,24 @@ export default {
         demo10(){
             /*
                 从输入url到页面加载完成发生了什么？——前端角度
-                1、浏览器的地址栏输入URL并按下回车。
-                2、浏览器查找当前URL的DNS缓存记录。
-                3、DNS解析URL对应的IP。
-                4、根据IP建立TCP连接（三次握手）。
-                5、HTTP发起请求。
-                6、服务器处理请求，浏览器接收HTTP响应。
-                7、渲染页面:构建DOM树;解析CSS,将CSS与DOM合并，构建渲染树;布局和绘制，重绘和重排
-                8、关闭TCP连接（四次挥手）
+                确认是搜索关键词还是合法 URL。如果是 URL，则解析出协议、域名、端口、路径等信息。随后会逐级检查 DNS 缓存
+                DNS解析URL对应的IP
+                建立 TCP 连接（三次握手）
+                发送 HTTP 请求
+                服务器处理并返回响应
+                浏览器接收与渲染页面
+                关闭TCP连接（四次挥手）
              */
         },
         demo11(){
             /**
              * 封装过什么组件
-             * 管理系统的分页条,主要是组件通讯
+             * 管理系统的分页组件,主要是组件通讯
+             * 上传组件
+             * 弹窗组件
+             * 日期选择组件
+             *
+             * 封装组件时应注重高内聚（专注单一功能）、低耦合，提供清晰的 API 文档和示例，并进行单元测试以保障稳定性4。优先考虑复用场景，避免过度拆分导致组件泛滥
              */
         },
         demo12(){
@@ -147,21 +147,11 @@ export default {
         },
         demo13(){
             /**
-             * 说说prototype  --- 看learn2.vue
+             * 说说prototype原型链  --- 看learn2.vue
+             * 在JavaScript中，prototype是实现对象继承和共享属性/方法的核心机制，所有函数都拥有该属性1。
              * 回答: vue.prototype把暴露的对象设置位全局变量,例如http请求的封装，通过prototype设置全局的
              * 继承属性:B.prototype = new A() 此时B继承A的所有属性和方法
-             * 有模块功能
-             */
-        },
-        demo14(){
-            /*
-             减少页面加载时间的方法
-                a. 尽量减少页面中重复的HTTP请求数量
-                b. 服务器开启gzip压缩
-                c. css样式的定义放置在文件头部
-                d. Javascript脚本放在文件末尾
-                e. 压缩合并Javascript、CSS代码
-                f. 使用多域名负载网页内的多个文件、图片
+             * 有模块化功能
              */
         },
         demo15(){
@@ -201,7 +191,9 @@ export default {
         demo19(){
             /*
                 HTML语义化的理解？
-                html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析,便于阅读维护理解;
+                内容结构化，结构更清晰
+                搜索引擎解析（SEO）
+                增强代码可读性与维护性
              */
         },
         demo20(){
@@ -219,13 +211,6 @@ export default {
             null表示"不应该有值"
             undefined表示"缺少值"
              */
-        },
-        demo21(){
-            /*
-                apply()与call()的区别？
-                方法如何改变this指向？
-                看pages\managementCenter\javaScript\learn2.vue
-            */
         },
         demo22(){
             /*
@@ -248,24 +233,32 @@ export default {
         },
         demo23(){
             /*
+            面试必考
             有哪些性能优化方法
-                1.减少http请求次数
-                2.减少DOM操作
-                3.图片预加载，将样式表放在顶部
-                4.少用全局变量
-                5.按需加载资源
-                6.压缩和模块打包
-                7.图片编码优化
-                8.销毁监听事件，定时器
+                路由懒加载，一次性加载所有路由，导致首页白屏，用户体验不好
+                图片懒加载，图片过多，加载速度慢，需要滚动到可视区域后再加载图片，使用vue-lazyload插件
+                按需引入，全局配置引入第三方插件的所有组件，导致项目体积太大，加载速度慢
+                监听事件销毁， 还有清除定时器，以免造成内存泄漏
+                大图片加载慢，需要切成几张图，再压缩图片
+                服务器开启Gzip压缩
+                PWA技术可以离线访问和缓存作用
+                在页面加载过程中，使用骨架屏占位符，提高用户体验
+                减少http请求次数
             */
         },
         demo24(){
             /*
             哪些常见操作会造成内存泄漏？
             内存泄漏指不再需要的变量仍然存在
-            闭包、控制台日志、循环
-            没有清理的DOM元素引用
-            被遗忘的定时器
+            利用Chrome DevTools等开发工具来检测和分析内存泄漏问题，从而定位并解决问题
+
+            全局变量的滥用
+            定时器未清除
+            闭包导致的内存泄漏
+            闭包中引用了外部函数的变量，并且这些变量在不再需要时未被释放，就会导致内存泄漏
+            DOM元素的引用未释放
+            缓存数据未合理管理：如果使用缓存（如Map、WeakMap等）来存储数据，而没有适当的清理机制，缓存会不断积累并占用越来越多的内存
+            持续绑定的事件：函数中addEventListener绑定事件，函数多次执行，绑定便会产生多次，产生内存泄漏
             */
         },
         demo25(){
@@ -277,78 +270,98 @@ export default {
         demo26(){
             /*
             http 和 https 有何区别？如何灵活使用？
-            https比http安全性高
-http是HTTP协议运行在TCP之上。所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。
-https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的内容都经过加密，加密采用对称加密，
-但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，
-如果配置了客户端验证，服务器方也可以验证客户端的身份
-             */
-        },
-        demo27(){
-            /*
-            浏览器缓存有哪些
-            一.http缓存
-            二.websql缓存，
-                1.cookie
-                2.localStorage
-                3.sessionStorage
-                4.flash缓存
+                HTTP 的主要缺点
+                明文传输风险：所有数据以明文形式发送，可能被第三方监听。
+                身份无法验证：不能确认通信对方是否为真实服务器，存在伪装风险。
+                数据完整性缺失：传输过程中数据可能被篡改而无法察觉。
 
+                HTTPS 的优势与不足
+                优点：
+                可认证服务器身份，确保数据发送到正确的接收方；
+                加密传输，防窃听、防篡改；
+                提升用户信任度和网站可信度；
+                被主流搜索引擎加权，有利于网站排名。
+
+                缺点：
+                初始连接握手耗时较长，影响页面加载速度；
+                SSL 证书需要成本，高级功能证书价格较高；
+                证书管理复杂，且传统上绑定 IP，不利于多域名共用同一 IP；
+                并不能防御 DDoS、服务器劫持等其他类型攻击。
              */
         },
         demo28(){
             /*
-            安全性上的同源策略：两个域要同协议, 同端口，同host域名，其中有一个不同，就产生跨域问题
-             */
-        },
-        demo29(){
-            /*
-            浏览器缓存cookie,localStorage,sessionStorage的区别
-            看pages\managementCenter\knowledge\cache.vue
-             */
-        },
-        demo30(){
-            /*
-            v-if和v-show的区别
-            即是display none;和visibility hidden区别
-            看pages\managementCenter\knowledge\v_tag.vue
+            跨域
+            跨域是浏览器基于同源策略的安全限制，当请求的协议、域名或端口任一不同时即触发
+            http://a.com → https://a.com （协议不同，跨域）
+            http://a.com:8080 → http://a.com:8081 （端口不同，跨域）
+            http://a.com → http://b.com （域名不同，跨域）
+
+            解决方案
+            CORS 通过在服务端设置响应头 Access-Control-Allow-Origin 来允许特定源访问资源 14。
+            代理模式（Proxy） 在开发中非常实用，比如 Vue 项目中通过 vue.config.js 配置 devServer.proxy 将 /api 请求转发到真实后端地址 4。
+            JSONP 利用 <script> 标签不受跨域限制的特性，动态创建 script 发起请求，但只能用于 GET 12。
+
+            可以搜Vue和React跨域代理配置示例
              */
         },
         demo31(){
            /*
            说说vue的生命周期
-           created先执行，再mounted，区别：created是创建数据不能Dom操作，mounted用于Dom操作
            看pages\managementCenter\knowledge\lifeCycle.vue
             */
         },
         demo32(){
             /*
             xml和json的区别
-            JSON相对于XML来讲，数据的体积小，传递的速度更快些
-            JSON与JavaScript的交互更加方便，更容易解析处理，更好的数据交互
-            XML对数据描述性比较好；
+            数组处理：JSON支持数组，而XML不支持数组。
+            可读性：与XML相比，JSON的文件非常易于阅读。
+            安全性：JSON的安全性较低，而XML比JSON更安全。
+            注释支持：JSON不支持注释，而XML支持注释。
+            编码差异：JSON仅支持UTF-8编码，而XML支持各种编码。
+            数据体积：JSON相对于XML来说，数据的体积小，传递快。
+            数据交互：JSON与JavaScript交互更加方便，更容易解析处理，有更好的数据交互。
+            数据描述：JSON对数据的描述性比XML较差。
+            传输速度：JSON的速度要远远快于xml。
              */
         },
         demo33(){
             /*
             浏览器内核的理解
-            主要分成两部分：渲染引擎和JS引擎
-            渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式
-            JS引擎则：解析和执行javascript来实现网页的动态效果
+            主要指渲染引擎，JS 引擎，负责将网页代码转换为用户可见的页面，不同内核导致网页在各浏览器中显示效果和性能存在差异
+            渲染引擎：负责解析 HTML 和 CSS，构建 DOM 树、渲染树，并计算元素位置大小，最终绘制出可视页面
+            JS引擎则：解析和执行 JavaScript 代码，实现页面动态交互功能，如动画、数据请求等
+
+            浏览器兼容性就是浏览器内核引起的
+            js语法错误，需要换适用的js
+
+            css语法错误
+                小高度元素撑开
              */
         },
         demo34(){
             /*
             html5有哪些新特性？
-            (1)绘画 canvas;
-            (2)用于媒介回放的 video 和 audio 元素;
-            (3)本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;
-            (4)sessionStorage 的数据在浏览器关闭后自动删除;
-            (5)语意化更好的内容元素，比如 article、footer、header、nav、section;
-            (6)表单控件，calendar、date、time、email、url、search;
-            (7)新的技术webworker, websocket, Geolocation;
+            HTML5 的主要新特性包括语义化标签、多媒体支持、图形绘制、本地存储、实时通信与设备访问等，显著提升了网页的交互性与功能性。
+            语义化标签 header、nav、article、section、aside、footer
+            多媒体<audio>, <video>
+            图形绘制<canvas>
+            矢量图形SVG
+            本地存储localStorage, sessionStorage
+            实时通信WebSocket
+            地理位置Geolocation API
+
             css3新特性：
-            border-radius，box-shadow,border-image,backgroung-origin等等
+            选择器[attr], :nth-child(n), ::before
+            圆角border-radius
+            阴影box-shadow, text-shadow
+            渐变linear-gradient(), radial-gradient()
+            边框图片border-image
+            变换transform: rotate(), scale()
+            动画@keyframes + animation
+            弹性布局display: flex
+            网格布局display: grid
+            多列布局column-count, column-gap
 
              */
         },
@@ -361,20 +374,63 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
         demo36(){
             /*
             网站重构的理解
-            重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。
-            a. 使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效的)
-            b. 对于移动平台的优化，针对于SEO进行优化
-            c. 减少代码间的耦合，让代码保持弹性
-            d. 压缩或合并JS、CSS、image等前端资源
+            重构不是UI改版：在不改变用户可见功能和界面（UI）的前提下，对网站的代码结构、技术架构和内部设计进行优化升级的过程，其核心目标是提升性能、可维护性与用户体验
+            浏览器兼容
+            优化代码
+            减少代码间的耦合度，提升模块独立性，提高扩展性与维护性，易于协作与复用（耦合度是指两个模块之间相互依赖的程度）
+            响应式设计，多设备适配
+            安全性升级，修复漏洞，更新依赖
+            技术栈演进，升级框架，加TypeScript
+            构建流程优化，模块化打包
             */
         },
         demo37(){
             /*
+            面试必考
             一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。
-            a. 图片懒加载，滚动到相应位置才加载图片。
-            b. 图片预加载，如果为幻灯片、相册等，将当前展示图片的前一张和后一张优先下载。
-            c. 使用CSSsprite，SVGsprite，Iconfont、Base64等技术，如果图片为css图片的话。
-            d. 如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。
+
+            首屏大图采用WebP格式+CDN+预加载
+            商品列表图使用懒加载+响应式适配
+            图标用雪碧图或Base64
+
+             一、图片体积优化
+
+            格式选择
+            优先使用 WebP 格式（比JPEG/PNG体积小50%），并通过 <picture> 标签兼容老旧浏览器。
+
+            压缩
+            对JPEG采用渐进式加载（先加载模糊预览，再渐进清晰）。
+            使用工具（如TinyPNG、Squoosh）压缩图片，控制JPEG质量在60-80%
+
+            响应式图片适配，响应式设计就是做适配
+            根据设备分辨率动态加载适配尺寸的图片，避免大图小用。
+            示例：<img src=""  srcset="" sizes="">
+
+            二、加载策略优化
+
+            懒加载（Lazy Load）
+            仅当图片进入可视区域时加载，初始用占位图或Base64微缩图替代356。
+            实现方式：
+            <img data-src="image.jpg"  src="占位图.jpg"  class="lazyload">
+                监听滚动，将 data-src 赋值给 src
+                获取页面的垂直和水平滚动位置
+                window.pageYOffset和window.pageXOffset
+                获取特定元素的滚动位置，是这个
+                element.scrollTop和element.scrollLeft
+
+            预加载关键资源
+            对首屏图片或核心Banner使用 <link rel="preload"> 提前加载
+
+            三、网络传输优化
+
+            网络传输优化
+            CDN加速与域名收敛
+            通过CDN将图片分发至边缘节点，减少物理距离延迟2413。
+            HTTP/2环境下收敛域名（减少DNS查询），HTTP/3协议可进一步降低建连时间413。
+            缓存策略
+            设置强缓存（Cache-Control: max-age=31536000）和协商缓存（ETag）1222。
+            云存储服务（如七牛）自动处理格式转换与缓存12。
+
              */
         },
         demo38(){
@@ -403,38 +459,110 @@ https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的
                     var a = "abcd";   引用次数1
                     a = "efgh";     ---赋值释放内存：原先引用次数减一，变0，释放内存
                     下次运行时，引用次数为0释放内存
+
+            开发者如何避免内存泄漏？
+            尽管有强大的GC机制，不当编码仍会导致内存泄漏：
+
+            全局变量残留：未声明的变量会成为 window 的属性，生命周期与页面一致，难以回收。
+            闭包过度持有：闭包会保留对外部函数变量的引用，若这些大对象不再需要却未解除引用，将无法被回收。
+            未清理的定时器和事件监听器：setInterval 回调或 addEventListener 的处理器若未手动清除，会持续持有作用域引用 。
+            DOM 引用未解除：移除 DOM 元素后，若 JavaScript 中仍有变量指向它，该元素及其绑定的数据仍不会被回收。
+
+            避免意外创建全局变量（始终使用 let/const）。
+            及时将不再需要的对象引用设为 null。
              */
         },
         demo41(){
             /*
-            vue服务器端渲染 (SSR)
-            构建客户端应用程序
-            优点：
-                更好的 SEO
-                更快的内容到达时间，特别是网络差或运行缓慢的设备，没下载完就能先渲染
-                特殊处理代码，才能在服务器渲染应用程序中运行
+            客户端渲染（CSR）
+            vue服务器端渲染 (SSR)，在服务器上将 Vue 组件渲染为 HTML 字符串，然后发送给客户端的技术
+            SSR 能够提升首屏加载速度、改善 SEO（搜索引擎优化），并提供更好的用户体验。
 
+            使用 Vue SSR 的方式
+            方式一：使用 Nuxt.js （推荐）
 
-            网站seo优化平台（按效果月结付费）：网址及搜索引擎的关键字优化，提高网站访问量和排名（客户至少提供10关键词和网址，提交给搜索引擎服务器）
+            方式二：手动搭建 Vue SSR（适用于学习或定制需求）
+            Vue 3 + Vite 或 Vue 2 + Webpack
+            Node.js 服务器（如 Express）
              */
         },
         demo42() {
             /*
                 vue组件更新机制
-                在父组件上任意触发监听，调用方法resize()
-                resize()调用callResize()
+                响应式系统：数据劫持与依赖追踪
+                Vue 在初始化时会对 data 和 props 中的数据进行响应式处理：
+                Vue 2 使用 Object.defineProperty()
+                Vue 3 改用 Proxy，提升了监听能力
 
-                如何避免浏览器卡顿，实现性能优化cdn
-                https://blog.csdn.net/weixin_43523043/article/details/126743180
-                jpg图片太大, 用png，并用压缩图片工具
-                http响应时间长
-                页面采用keep-alive缓存组件
-                不要连用v-if 和 v-for
-                使用路由懒加载、异步组件
-                第三方模块按需导入
-                长列表滚动到可视区域动态加载
-                图片懒加载
+                虚拟DOM与Diff算法
+                Vue 使用虚拟DOM（VNode）树来描述真实DOM结构。当数据变化后：
+                生成新的 VNode 树
+                通过 Diff 算法比对新旧 VNode
+                找出差异并最小化更新真实DOM
+
+                异步更新队列（Event Loop机制）
+                Vue 的更新是异步的。当你修改多个数据时，它们会被合并为一次更新：
+                数据变更 → 加入异步队列
+                在下一个 tick（事件循环）中批量执行 2
+                使用 nextTick 可在DOM更新后执行回调
+
+                组件更新顺序：自上而下
+                父组件先于子组件更新。当父组件重新渲染时，会递归触发子组件的更新检查：
+                若子组件 props 无变化且无内部状态更新，则跳过渲染
+                列表渲染中使用 key 可帮助 Vue 更准确识别节点，减少重建
              */
+        },
+        demo43() {
+            /*
+                面试必考
+                vue2升级vue3有哪些变化
+                    vue2图片资源要放在static和assets目录下，vue3图片资源可以放在业务模块里，类似react项目了
+                    element-ui要换成element-plus，使用的UI组件都要element-plus里有，vue2很多插件都要换
+                    Vue3加了很多底层方法，使用性更好了
+                    this.$set，Vue.extend, this.nextTick，.$el 方法已被删除
+                    vue3有三种组件，defineComponent组件，setup组件，类组件
+                    slot-scope="scope"变v-slot="scope"
+                    删了过滤器，改使用方法过滤
+                    component: resolve => require(['@/views/defaultPath'], resolve)
+                    变
+                    component: () => import('@/views/404.vue')
+                    :visible.sync
+                    变
+                    v-model
+                    :deep(tag) {} 替换 /deep/
+                    addRoutes 变 addRoute
+                    />  替换  ></input>
+                    path: '*',
+                    变
+                    path: '/:pathMatch(.*)*',
+                    没有变量$eventBus
+                    <keep-alive>
+                    <router-view></router-view>
+                    </keep-alive>
+                    改为
+                    <router-view v-slot="{ Component }">
+                    <keep-alive>
+                        <component :is="Component" />
+                    </keep-alive>
+                    </router-view>
+
+             */
+        },
+        demo44() {
+            /*
+                面试必考
+                说说独立搭建项目
+                    代码风格，语法校验
+                    网络请求的封装，http拦截
+                    动态路由的配置，或者模块化路由配置，路由拦截
+                    vuex状态管理
+                    黑夜白天模式
+                    主要是用的ui组件库
+                    移动端的rem适配
+                    统一基础样式
+                    公共方法
+                    env配置环境变量
+            */
         }
     }
 }

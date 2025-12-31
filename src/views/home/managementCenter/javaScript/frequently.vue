@@ -4,33 +4,22 @@
     </section>
 </template>
 <!--
-    使用场景：短时间内频繁触发事件，比如监听，人为点点点
-    debounce函数防抖: 只执行最后一次
-    throttle函数节流：只执行一次
+    面试必考
+    短时间内频繁触发事件
+    debounce函数防抖: 只执行最后一次，一直清除定时器，点停了才有个定时器执行
+    使用场景：输入框实时搜索，按钮点击防止多次提交
+    throttle函数节流：只执行一次，隔一段时间不会执行
+    使用场景：，滚动监听，鼠标移动监听
  -->
 <script>
-// import { throttle, debounce } from 'lodash';
-function throttle(func, delay) {
-  let lastCall = 0;
-  // args参数就是handleResize调用传的参数
-  return function(...args) {
-    // 检查自上次调用以来是否已经过了指定的延迟时间
-    const now = new Date().getTime();
-    if (now - lastCall < delay) {
-      return;
-    }
-    // 更新上次调用时间
-    lastCall = now;
-    // 修改this指向，并调用回调函数
-    return func.apply(this, args);
-  };
-}
+// 使用工具库
+// import { debounce, throttle } from 'lodash';
+
+// js原生防抖
 function debounce(func, wait) {
     let timeout;
-    return function() {
+    return function(...args) {
         const that = this;
-        // args参数就是handleResize调用传的参数
-        const args = arguments;
         // 重新设置定时器
         clearTimeout(timeout);
         timeout = setTimeout(function() {
@@ -38,6 +27,22 @@ function debounce(func, wait) {
             func.apply(that, args);
         }, wait);
     };
+}
+
+// js原生节流
+function throttle(func, delay) {
+  let lastCall = 0;
+  // args参数就是handleResize调用传的参数
+  return function(...args) {
+    // 检查自上次调用以来是否已经过了指定的延迟时间
+    const now = new Date().getTime();
+    if (now - lastCall >= delay) {
+        // 更新上次调用时间
+        lastCall = now;
+        // 修改this指向，并调用回调函数
+        func.apply(this, args);
+    }
+  };
 }
 
 export default {

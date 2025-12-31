@@ -250,7 +250,7 @@
         <LineTextLine>布局容器</LineTextLine>
         <section class="cartoon-unit">
             <header>
-                header顶栏容器
+                页面顶部、文章标题区域
             </header>
             <section>
                 <aside>
@@ -266,8 +266,12 @@
         </section>
         <LineTextLine>article标签</LineTextLine>
         <article>
-            article标签
+            主菜单、侧边栏导航
         </article>
+        <LineTextLine>nav标签</LineTextLine>
+        <nav>
+            主菜单、侧边栏导航
+        </nav>
         <LineTextLine>details展开标签</LineTextLine>
         <div class="atmosphere">
             <details :open="true">

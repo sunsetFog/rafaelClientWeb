@@ -51,6 +51,7 @@ export default defineComponent({
         }
     },
     created() {
+        this.peppers();
         this.beanWay(params);
 
         this.dragonfly({ tile: '看看' });
@@ -81,9 +82,47 @@ export default defineComponent({
         butterfly02(): String {
             return "么么哒";
         },
-        // 泛型   作用：传入参数的类型 == 返回值的类型    而any是任何类型，两者不相等
+        // 泛型函数   作用：传入参数的类型 == 返回值的类型    而any是任何类型，两者不相等
         identity<T>(arg: T): T {
             return arg;
+        },
+        // 泛型类
+        cauliflower() {
+            class Leeks<T> {
+                private carrots: T;
+                constructor(value: T) {
+                    this.carrots = value;
+                }
+                getCarrots(): T {
+                    return this.carrots;
+                }
+            }
+            let box1 = new Leeks<string>("hello");
+                console.log("胡萝卜", box1.getCarrots());
+            let box2 = new Leeks<number>(36);
+                console.log("胡萝卜", box2.getCarrots());
+        },
+        // 泛型接口
+        mushrooms() {
+            interface Pair<T, U> {
+                first: T;
+                second: U;
+            }
+            let onions: Pair<string, number> = {
+                first: 'hello',
+                second: 48
+            }
+        },
+        // 泛型约束，约束参数属性
+        peppers() {
+            interface Avocados {
+                length: number;
+            }
+            function zucchini<T extends Avocados>(arg: T): T {
+                return arg;
+            }
+            zucchini("hello");
+            // zucchini(42); // 数字没有length属性
         },
         //表单提交事件---调用接口
         async handleSubmit(v) {

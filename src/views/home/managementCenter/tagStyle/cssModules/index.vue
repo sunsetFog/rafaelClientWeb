@@ -12,7 +12,7 @@ export default {
     name: '模块化样式',
     created() {
         console.log("--$style--", this.$styles);
-        console.log("--$comic--", this.$comic);
+        console.log("--$comic--", $comic);
     }
 }
 </script>

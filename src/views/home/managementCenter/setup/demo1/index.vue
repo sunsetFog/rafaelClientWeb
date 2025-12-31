@@ -26,7 +26,7 @@ interface Book {
 const book2: Book = reactive({ title: 'Vue 3 指引' })
 // 标注类型  会自动从其计算函数的返回值上推导出类型  ComputedRef<string>
 const double1 = computed(() => 'sign: ' + keyword.value)
-// 通过泛型参数显式指定类型
+// 指定类型
 const double2 = computed<number>(() => {
   // 若返回值不是 number 类型则会报错
   return 2

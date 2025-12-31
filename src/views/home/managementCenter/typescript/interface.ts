@@ -7,7 +7,7 @@ interface taskType {
 export interface Book {
     readonly title: string | number; // 只读属性，创建的值不能修改    可以字符串或数字类型
     year?: number; // 问号表示可选的属性, 既是可以缺少这个属性
-    list: number[]; // 表示由此类型元素组成的一个数组    方式二：数组泛型 Array<number>
+    list: number[]; // 表示由此类型元素组成的一个数组    方式二： Array<number>
     grass(source: string, subString: string): boolean; // 函数类型   返回值是boolean类型
     phoneWay: (option: boolean) => void; // 函数类型
     pumpkin?: Function;

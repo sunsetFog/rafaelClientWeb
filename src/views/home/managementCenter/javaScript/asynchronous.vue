@@ -18,6 +18,7 @@ export default {
                 console.log('error', err); //语法错误会触发catch方法
             });
     },
+    // 面试必考
     mounted() {
         this.demo3().then(function(res) {
             // 可以省略then,catch
@@ -31,13 +32,14 @@ export default {
         // });// 传参3是个方法
     },
     methods: {
-        // 用于控制执行顺序
+        // 调用方法传函数，用于控制执行顺序
         comeBack1(params1, params2, callback) {
             // 参数3是个方法，一定要放最后
             // 方法callback的应用
             console.log('传入的参数:', params1, params2);
             callback({ message: '成功' }); // callback有return功能，结束方法    不一定命名callback 或result
         },
+        // 执行顺序
         demo1() {
             console.log('1'); // 同步任务
             setTimeout(function() {
@@ -49,7 +51,6 @@ export default {
                 console.log('3');
             }, 0);
 
-            // 应用: new Promise给变量，或return new Promise...给方法都行, 就可以then了
             var promise = new Promise(function(resolve) {
                 // new Promise是同步任务
                 console.log('4');
@@ -58,7 +59,7 @@ export default {
             promise.then(function() {
                 // promise.then是异步-微任务
                 console.log('5');
-            }); // promise是异步解决方案，要想两个方法顺序执行，就用promise
+            });
 
             console.log('6'); // 同步任务
             //执行顺序: 1、4、6、5、2、3
@@ -68,14 +69,14 @@ export default {
             异步任务: 先进入"任务队列"，等待主线程任务执行完毕，"任务队列"才进入主线程，开始执行
 
             异步任务: 分为宏任务和微任务,先微任务，再宏任务
-            简单理解: 先同步，再异步(先微任务，再宏任务)     请记能异步的js */
+            简单理解: 先同步，再异步(先微任务，再宏任务)      */
         },
+        // Promise应用在reture里
         demo2() {
             /*
-        异步编程: 按顺序步骤执行（promise和async属于es6）
-        Promise多用于在方法return new Promise.....然后调用该方法时，方法名(传参).then回调函数
-        作用：保证执行成功后then回调
-      */
+                异步编程: 按顺序步骤执行（promise和async属于es6）
+                Promise用于控制执行顺序，用了http请求的异步也能按照顺序执行
+            */
             function is_promise(value) {
                 return new Promise((resolve, reject) => {
                     console.log('new Promise是同步任务', value);
@@ -87,16 +88,21 @@ export default {
                 console.log('promise.then是异步-微任务', result);
             });
         },
+        // Promise应用在reture里
+        demo3() {
+            return Promise.resolve("then回调");
+            // return Promise.reject("catch回调");
+        },
         /*
-      async修饰方法才能用await
-      多个顺序步骤，promise就不太好使了,优化用async/await
-      作用：await修饰http接口，接口需要20秒，也能保证顺序执行
-    */
+            async修饰方法才能用await
+            多个顺序步骤，promise就不太好使了,优化用async/await
+            作用：await修饰http接口，接口需要20秒，也能保证顺序执行
+        */
         async cause(params) {
             /*
-          应用接口的执行步骤: 如先获取id，再用该id传别的接口   http请求就是用这个封装的
-          await的是接口时，接口需要时间，顺序：先渲染dom，执行完，再次渲染dom
-       */
+                应用接口的执行步骤: 如先获取id，再用该id传别的接口   http请求就是用这个封装的
+                await的是接口时，接口需要时间，顺序：先渲染dom，执行完，再次渲染dom
+            */
             let guide = await this.cause1(params);
             await this.cause2(guide); // 步骤1获取的id，传给步骤2
             await this.cause3();
@@ -114,10 +120,6 @@ export default {
         },
         cause3() {
             console.log('await-3');
-        },
-        demo3() {
-            return Promise.resolve("then回调");
-            // return Promise.reject("catch回调");
         }
      },
 };

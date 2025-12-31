@@ -13,7 +13,7 @@ import {
 // 数字数组
 let numbers1: number[] = [1, 2, 3, 4, 5];
 let numbers2: any[] = [1, 2, 3, 4, 5];
-// 使用泛型定义字符串数组
+
 let names1: Array<string> = ['Alice', 'Bob', 'Charlie'];
 let names2: Array<any> = ['Alice', 'Bob', 'Charlie'];
 export interface coffee {
