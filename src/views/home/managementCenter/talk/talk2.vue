@@ -23,6 +23,13 @@ export default {
                 并使用 浅比较（shallow comparison） 来判断 props 和 state 是否发生变化 2。只有当浅比较结果为“不相等”时，才会触发重新渲染。
                 一般用Component，PureComponent作为子组件用的
             */
+        },
+        demo2() {
+            /*
+            模式	     实现方式	                        路由url表现
+            HashRouter	    监听url hash值实现	                http://localhost:3000/#/about
+            BrowerRouter    h5的 history.pushState API实现     http://localhost:3000/about
+            */
         }
     }
 }
