@@ -62,17 +62,49 @@ export default {
             })();
         },
         demo4(){
-            /* 闭包：函数内部再次定义函数，内部函数可以调用外部函数的局部变量,但是外部函数无法调用内部函数的变量
+            /*
+            面试必考
+            闭包：函数内部再次定义函数，内部函数可以调用外部函数的局部变量,但是外部函数无法调用内部函数的变量
             闭包的优势：1.内部函数可以调用外部函数的局部变量; 2.闭包使变量一直保存在内存中，而不是在函数执行完毕时被回收
-            闭包的劣势：每次将变量保存在内存中，占用内存 */
+            闭包的劣势：每次将变量保存在内存中，占用内存
+
+            Vue 中闭包的主要应用场景
+            1.定时器的使用，需要手动清除
+            methods: {
+                onClick() {
+                    let self = this; // 使用闭包保存 this
+                    this.timer  = setInterval(function () {
+                        self.message  = '更新了'; // 引用了外函数变量
+                    }, 1000);
+                }
+            }
+            setInterval 的回调函数形成了闭包，持有了对组件实例的引用。
+            如果不手动清除，即使组件销毁，定时器仍在运行，导致组件无法被 GC 回收。
+            beforeUnmount() {
+                if (this.timer)  {
+                    clearInterval(this.timer);
+                    this.timer  = null;
+                }
+            }
+            2.事件监听的使用，需要手动清除
+
+
+            */
+            let wooo = null;
             function fn1(){
             	var a=1;
             	function fn2(){
             		console.log(a);//获取函数外定义a
             	}
+                // 外部引用了闭包函数
+                wooo = fn2
             	return fn2;//此时fn2是指针
             }
             fn1()();
+            // 使用闭包
+            wooo();
+            // 有外部引用要清除闭包，没有外部引用，执行后闭包即释放
+            wooo = null;
             //或者
             function fr1(){
             	var a=2;
