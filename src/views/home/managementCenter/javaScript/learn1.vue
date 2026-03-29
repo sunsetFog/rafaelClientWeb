@@ -211,7 +211,8 @@ export default {
         },
         demo5(){
             /* 五种基本数据类型，数字（number),字符串（string)，布尔(boolean）,空（null），未定义（undefined）
-            检测数据类型用：typeof 变量   不同写法   typeof(变量)
+            检查原始类型：typeof 变量   不同写法   typeof(变量)
+            检查引用类型：arr instanceof Array
             NaN不是一个数字，typeof(NaN)结果为number */
             var age = 18;//number
             var name = "张";//字符串
@@ -222,7 +223,7 @@ export default {
                 sex = "男";//赋值
             var age = 32;//声明同时直接赋值
             console.log('1typeof',typeof age,typeof(age));
-            console.log('2typeof',typeof null,typeof [],typeof {});//都是object   因此需要用到instanceof来检测某个对象是不是另一个对象的实例，返回true或false
+            console.log('2typeof',typeof null,typeof [],typeof {});//都是object   因此需要用到arr instanceof Array
 
             console.log('判断值是数字或是NaN', isNaN('锦锦'));// true 返回true或false
             var isValue = '$8,9yuu9.8'
@@ -233,24 +234,6 @@ export default {
                 }
             }
             console.log('去掉不是数字的字符', isValue)
-
-
-            let arr = [];
-            let obj = {};
-            console.log('方法1-判断是数组还是对象',obj instanceof Array);//false 判断obj不是数组
-            console.log('方法1-判断是数组还是对象',arr instanceof Array);//true,判断arr是数组
-
-            console.log('但是-instanceof',arr instanceof Object);//也会返回 true;这是因为 Array 是 object 的子类。
-
-            console.log('方法2-判断是数组还是对象',Array.isArray(arr));// true      Array.isArray(参数) 用于判断值是否为数组   是返回true,否返回false
-            console.log('方法2-判断是数组还是对象',Array.isArray(obj));// false
-
-            console.log('方法3-判断是数组还是对象',arr.constructor === Array); //true
-            console.log('方法4-判断是数组还是对象',arr.constructor === Object); //false
-
-            // Object.prototype.toString.call(参数)方法可以精准判断变量类型
-            // console.log('精准判断变量类型',Object.prototype.toString.call(arr));//[object Array]    需要截取第二个值
-            console.log('精准判断变量类型',Object.prototype.toString.call(arr).slice(8,-1));
         },
         demo6(){
             //数据类型转换

@@ -37,6 +37,11 @@ export default {
                 八.加载完页面后，多个button高亮---向后台保存要高亮的下标，那数据时，用该下标高亮
 
             为啥离职？
+                想去旅游放松一下再找工作
+                项目收尾了
+                去找网上女友玩
+                回家相亲
+                公司转型了
                 面试时沟通的工作内容和实际情况完全不一样
                 公司不发工资
                 项目没了
@@ -520,7 +525,7 @@ export default {
                     element-ui要换成element-plus，使用的UI组件都要element-plus里有，vue2很多插件都要换
                     Vue3加了很多底层方法，使用性更好了
                     this.$set，Vue.extend, this.nextTick，.$el 方法已被删除
-                    vue3有三种组件，defineComponent组件，setup组件，类组件
+                    vue3有三种组件，defineComponent选项组件，setup组合组件，类组件
                     slot-scope="scope"变v-slot="scope"
                     删了过滤器，改使用方法过滤
                     component: resolve => require(['@/views/defaultPath'], resolve)

@@ -10,23 +10,39 @@
 <script>
 /*
     事件
-        1.onload:用户打开页面执行该事件，放在body内部
-        2.onchange：当表单内容发生改变时触发该事件,div,p等非表单元素没有改属性
-        3.onfocus：表单获取焦点事件
-        4.onblur：表单失去焦点事件
-        5.onmouseover：鼠标悬浮事件
-        6.onmouseout: 鼠标离开事件
-        7.onmousedown：鼠标按下时触发该事件
-        8.onmouseup：鼠标抬起事件
-        onMouseMove 拖动
-        onMouseLeave 离开
-        9.onclick：鼠标点击完毕事件
-        10.ondblclick：双击事件
+        onload:用户打开页面执行该事件，放在body内部
 
-        移动端事件
+        鼠标事件
+        onClick 点击事件
+        ondblclick 双击事件
+        onMouseEnter 鼠标进入
+        onMouseMove 拖动
+        onMouseOver：鼠标悬浮事件
+        onMouseLeave 鼠标离开 推荐
+        onMouseOut: 鼠标离开事件 不推荐，其子元素也是离开了
+        onMouseDown：鼠标按下时触发该事件
+        onMouseUp：鼠标抬起事件
+
+        表单事件
+        onChange 值变化事件
+        onSubmit 表单提交
+        onFocus 获得焦点
+        onBlur 失去焦点
+
+        键盘事件
+        onKeyDown 键盘按下
+        onKeyUp 键盘释放
+        onKeyPress 键盘按下
+
+        移动端触摸事件
         ontouchstart
         ontouchmove
         ontouchend
+
+        剪贴板事件
+        onCopy
+        onCut
+        onPaste
 
         窗口关闭之前执行的逻辑
         window.onbeforeunload = function (e) {
@@ -34,6 +50,18 @@
         window.onresize = function () {
 
         在某情况会去掉on，或用@代替on
+
+        事件对象的属性
+        bubbles 事件是否冒泡
+        cancelable 事件是否可以取消
+        currentTarget 当前处理事件的元素
+        target 触发事件的元素
+        nativeEvent 原生DOM事件对象
+
+        事件对象的方法
+        preventDefault() 阻止默认行为
+        stopPropagation() 阻止事件冒泡
+        persist() 在异步回调中保留事件对象
 */
 export default {
     name: "incident",

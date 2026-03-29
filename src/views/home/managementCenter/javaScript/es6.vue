@@ -1,6 +1,6 @@
 <template>
     <section id="es6">
-        <!-- 
+        <!--
             菜鸟教程：https://www.runoob.com/w3cnote/es6-tutorial.html
             ES6 入门教程:  https://es6.ruanyifeng.com/
          -->
@@ -20,7 +20,7 @@ export default {
     },
     mounted(){
         let ly = this.demo1();//调用函数后不会运行，而是返回指向函数内部状态的指针
-        
+
         console.log('next一',ly.next());// {value: 1, done: false}
         console.log('next二',ly.next());// {value: 2, done: false}
         console.log('next三',ly.next());// {value: "成功返回信息", done: true}      ----done: true，方法再调用无效
@@ -40,8 +40,9 @@ export default {
             return '成功返回信息';
         },
         demo2(){
+            // var可以重新赋值，可以重新声明
             // 声明与表达
-            // let: 1.代码块内有效  2.不能重复声明
+            // let: 1.代码块内有效  2.可以重新赋值，不可以重新声明
             if(true){
                 let name = '笑笑';
                 // let name = '涵涵';// 重复声明了，报错
@@ -49,13 +50,13 @@ export default {
             }
             console.log('let与var',name,age);//结果: 空、19    let在if代码块有效
 
-            //const 声明一个只读变量,声明后值不能修改
+            //const 声明一个只读变量，不可以重新赋值，不可以重新声明
             const PI = "3.1415926";
             // PI = 666;// const值不能修改，报错
             console.log('const',PI);
         },
         demo3(){
-            //箭头函数  (参数) => {}  相当于  function (参数) {}        箭头函数里面没有 this 对象，用的this是外层或Window 
+            //箭头函数  (参数) => {}  相当于  function (参数) {}        箭头函数里面没有 this 对象，用的this是外层或Window
             // 简写: res => 'return内容'
             var f = v => v;
             //等价于
@@ -77,7 +78,7 @@ export default {
                 @click="function(a){
                     return this.isWay(a, b);
                 }"
-            */ 
+            */
         },
         demo4(){
             // 简写
@@ -134,11 +135,11 @@ export default {
             // map对象: Map 的键可以是任意值,Object 的键只能是字符串或者 Symbols
             var myMap = new Map();
 
-            var keyString = "a string"; 
+            var keyString = "a string";
             myMap.set(keyString, "1");
             console.log('key是字符串',myMap.get(keyString));// 1
             console.log('key是字符串',myMap.get("a string"));// 1    因为 keyString === 'a string'
-                
+
             var keyObj = {};
             myMap.set(keyObj, "2");
             console.log('key是对象',myMap.get(keyObj));// 2
@@ -206,7 +207,7 @@ export default {
 
 <style lang="less" scoped>
 #es6{
-    
+
 }
 </style>
 

@@ -13,12 +13,15 @@ export default {
         }
     },
     created() {
-        this.demo11();
+        this.demo0({id:1});
     },
     methods: {
-        // 兼容处理
+        // 判断是否数组（兼容处理）
         demo0(arr) {
-            // 是否为数组，返回true或false     比这个好用 arr || []
+            console.log("方式一，返回布尔值", Object.prototype.toString.call(arr).slice(8, -1) == 'Array')
+            console.log("方式二，检查引用类型，返回布尔值", arr instanceof Array)
+            console.log("方式三，返回布尔值", Array.isArray(arr))
+            console.log("方式四，返回布尔值", arr.constructor === Array)
             if(Array.isArray(arr)) {
                 return arr;
             } else {
